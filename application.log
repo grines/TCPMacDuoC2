@@ -1,0 +1,663 @@
+2023/11/27 20:15:27 Starting the application
+2023/11/27 20:15:27 Starting implant listener on port 8008...
+2023/11/27 20:15:27 Starting remote client listener on port 8009...
+2023/11/27 20:15:43 Command received: list
+2023/11/27 20:15:43 Command received: pwd
+2023/11/27 20:15:43 Command received: current
+2023/11/27 20:19:01 Shutting down gracefully
+2023/11/27 20:19:03 Starting the application
+2023/11/27 20:19:03 Starting implant listener on port 8008...
+2023/11/27 20:19:03 Starting remote client listener on port 8009...
+2023/11/27 20:19:10 Command received: list
+2023/11/27 20:19:10 Command received: pwd
+2023/11/27 20:19:10 Command received: current
+2023/11/27 20:19:31 Command received: list
+2023/11/27 20:19:31 Command received: pwd
+2023/11/27 20:19:31 Command received: current
+2023/11/27 20:19:35 Command received: select 1
+2023/11/27 20:19:35 Command received: pwd
+2023/11/27 20:19:35 Command received: current
+2023/11/27 20:19:37 Command received: whiami
+2023/11/27 20:19:37 Command received: pwd
+2023/11/27 20:19:37 Command received: current
+2023/11/27 20:19:39 Command received: whoami
+2023/11/27 20:19:39 Command received: pwd
+2023/11/27 20:19:39 Command received: current
+2023/11/27 20:19:42 Command received: cat /etc/passwd
+2023/11/27 20:19:42 Command received: pwd
+2023/11/27 20:19:42 Command received: current
+2023/11/27 20:19:44 Command received: test
+2023/11/27 20:19:44 Command received: pwd
+2023/11/27 20:19:44 Command received: current
+2023/11/27 20:19:45 Command received: sdf
+2023/11/27 20:19:45 Command received: pwd
+2023/11/27 20:19:45 Command received: current
+2023/11/27 20:19:45 Command received: asdf
+2023/11/27 20:19:45 Command received: pwd
+2023/11/27 20:19:45 Command received: current
+2023/11/27 20:19:46 Command received: asd
+2023/11/27 20:19:46 Command received: pwd
+2023/11/27 20:19:46 Command received: current
+2023/11/27 20:19:46 Command received: fas
+2023/11/27 20:19:46 Command received: pwd
+2023/11/27 20:19:46 Command received: current
+2023/11/27 20:19:46 Command received: dfas
+2023/11/27 20:19:46 Command received: pwd
+2023/11/27 20:19:46 Command received: current
+2023/11/27 20:19:46 Command received: df
+2023/11/27 20:19:46 Command received: pwd
+2023/11/27 20:19:46 Command received: current
+2023/11/27 20:19:49 Command received: ls
+2023/11/27 20:19:49 Command received: pwd
+2023/11/27 20:19:49 Command received: current
+2023/11/27 20:19:51 Command received: whoami
+2023/11/27 20:19:51 Command received: pwd
+2023/11/27 20:19:51 Command received: current
+2023/11/27 20:19:59 Command received: security
+2023/11/27 20:19:59 Command received: pwd
+2023/11/27 20:19:59 Command received: current
+2023/11/27 20:20:03 Command received: security -h
+2023/11/27 20:20:03 Command received: pwd
+2023/11/27 20:20:03 Command received: current
+2023/11/27 20:28:44 Shutting down gracefully
+2023/11/27 20:28:47 Starting the application
+2023/11/27 20:28:47 Starting implant listener on port 8008...
+2023/11/27 20:28:47 Starting remote client listener on port 8009...
+2023/11/27 20:28:55 Command received: list
+2023/11/27 20:28:55 Command received: pwd
+2023/11/27 20:28:55 Command received: current
+2023/11/27 20:29:15 Command received: list
+2023/11/27 20:29:15 Command received: pwd
+2023/11/27 20:29:15 Command received: current
+2023/11/27 20:29:18 Command received: select 1
+2023/11/27 20:29:18 Command received: pwd
+2023/11/27 20:29:33 Command received: ls
+2023/11/27 20:29:59 Command received: current
+2023/11/27 20:29:59 Command received: pwd
+2023/11/27 20:30:03 Command received: list
+2023/11/27 20:30:03 Command received: pwd
+2023/11/27 20:30:06 Shutting down gracefully
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:06 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:30:08 Starting the application
+2023/11/27 20:30:08 Starting implant listener on port 8008...
+2023/11/27 20:30:08 Starting remote client listener on port 8009...
+2023/11/27 20:30:14 Command received: list
+2023/11/27 20:30:14 Command received: pwd
+2023/11/27 20:30:14 Command received: current
+2023/11/27 20:30:20 Command received: list
+2023/11/27 20:30:20 Command received: pwd
+2023/11/27 20:30:20 Command received: current
+2023/11/27 20:30:25 Command received: select 1
+2023/11/27 20:30:25 Command received: pwd
+2023/11/27 20:30:25 Command received: current
+2023/11/27 20:30:34 Command received: list
+2023/11/27 20:30:34 Command received: pwd
+2023/11/27 20:30:34 Command received: current
+2023/11/27 20:30:36 Command received: list
+2023/11/27 20:30:36 Command received: pwd
+2023/11/27 20:30:36 Command received: current
+2023/11/27 20:30:36 Command received: list
+2023/11/27 20:30:36 Command received: pwd
+2023/11/27 20:30:36 Command received: current
+2023/11/27 20:30:39 Command received: select 1
+2023/11/27 20:30:39 Command received: pwd
+2023/11/27 20:31:55 Shutting down gracefully
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:55 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:31:56 Starting the application
+2023/11/27 20:31:56 Starting implant listener on port 8008...
+2023/11/27 20:31:56 Starting remote client listener on port 8009...
+2023/11/27 20:32:03 Command received: list
+2023/11/27 20:32:03 Command received: pwd
+2023/11/27 20:32:03 Command received: current
+2023/11/27 20:32:14 Command received: list
+2023/11/27 20:32:14 Command received: pwd
+2023/11/27 20:32:14 Command received: current
+2023/11/27 20:32:16 Command received: select 1
+2023/11/27 20:32:16 Command received: pwd
+2023/11/27 20:37:48 Shutting down gracefully
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:48 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:37:50 Starting the application
+2023/11/27 20:37:50 Starting implant listener on port 8008...
+2023/11/27 20:37:50 Starting remote client listener on port 8009...
+2023/11/27 20:37:57 Command received: list
+2023/11/27 20:38:11 Command received: list
+2023/11/27 20:38:11 Command received: pwd
+2023/11/27 20:38:11 Command received: current
+2023/11/27 20:38:15 Command received: select 1
+2023/11/27 20:38:15 Command received: pwd
+2023/11/27 20:39:09 Shutting down gracefully
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:39:09 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:40:30 Starting the application
+2023/11/27 20:40:30 Starting implant listener on port 8008...
+2023/11/27 20:40:30 Starting remote client listener on port 8009...
+2023/11/27 20:40:37 Command received: list
+2023/11/27 20:40:37 Command received: pwd
+2023/11/27 20:40:37 Command received: current
+2023/11/27 20:40:40 Command received: select 1
+2023/11/27 20:40:40 Command received: pwd
+2023/11/27 20:40:40 Command received: current
+2023/11/27 20:40:42 Command received: whoami
+2023/11/27 20:40:42 Command received: pwd
+2023/11/27 20:40:42 Command received: current
+2023/11/27 20:40:46 Command received: cat /etc/passwd
+2023/11/27 20:40:46 Command received: pwd
+2023/11/27 20:40:46 Command received: current
+2023/11/27 20:42:24 Shutting down gracefully
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:24 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:42:25 Starting the application
+2023/11/27 20:42:25 Starting implant listener on port 8008...
+2023/11/27 20:42:25 Starting remote client listener on port 8009...
+2023/11/27 20:42:30 Command received: list
+2023/11/27 20:42:30 Command received: pwd
+2023/11/27 20:42:30 Command received: current
+2023/11/27 20:42:38 Command received: list
+2023/11/27 20:42:38 Command received: pwd
+2023/11/27 20:42:38 Command received: current
+2023/11/27 20:42:40 Command received: list
+2023/11/27 20:42:40 Command received: pwd
+2023/11/27 20:42:40 Command received: current
+2023/11/27 20:42:42 Command received: list
+2023/11/27 20:42:42 Command received: pwd
+2023/11/27 20:42:42 Command received: current
+2023/11/27 20:42:44 Command received: select 1
+2023/11/27 20:42:44 Command received: pwd
+2023/11/27 20:42:44 Command received: current
+2023/11/27 20:42:46 Command received: list
+2023/11/27 20:42:46 Command received: pwd
+2023/11/27 20:42:46 Command received: current
+2023/11/27 20:44:33 Shutting down gracefully
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:44:35 Starting the application
+2023/11/27 20:44:35 Starting implant listener on port 8008...
+2023/11/27 20:44:35 Starting remote client listener on port 8009...
+2023/11/27 20:44:49 Command received: list
+2023/11/27 20:44:49 Command received: pwd
+2023/11/27 20:44:49 Command received: current
+2023/11/27 20:44:52 Command received: select 1
+2023/11/27 20:44:52 Command received: pwd
+2023/11/27 20:44:52 Command received: current
+2023/11/27 20:44:55 Command received: whoami
+2023/11/27 20:44:55 Command received: pwd
+2023/11/27 20:44:55 Command received: current
+2023/11/27 20:44:58 Command received: cat /etc/passwd
+2023/11/27 20:44:58 Command received: pwd
+2023/11/27 20:44:58 Command received: current
+2023/11/27 20:45:13 Command received: keychain Viscosity/1/ovpn
+2023/11/27 20:45:18 Command received: pwd
+2023/11/27 20:45:18 Command received: current
+2023/11/27 20:45:24 Command received: select 2
+2023/11/27 20:45:24 Command received: pwd
+2023/11/27 20:45:24 Command received: current
+2023/11/27 20:45:26 Command received: list
+2023/11/27 20:45:26 Command received: pwd
+2023/11/27 20:45:26 Command received: current
+2023/11/27 20:45:28 Command received: cd ..
+2023/11/27 20:45:28 Command received: pwd
+2023/11/27 20:45:28 Command received: current
+2023/11/27 20:45:29 Command received: cd ..
+2023/11/27 20:45:29 Command received: pwd
+2023/11/27 20:45:29 Command received: current
+2023/11/27 20:45:29 Command received: cd ..
+2023/11/27 20:45:29 Command received: pwd
+2023/11/27 20:45:29 Command received: current
+2023/11/27 20:45:30 Command received: ll
+2023/11/27 20:45:30 Command received: pwd
+2023/11/27 20:45:30 Command received: current
+2023/11/27 20:45:31 Command received: ls
+2023/11/27 20:45:31 Command received: pwd
+2023/11/27 20:45:31 Command received: current
+2023/11/27 20:45:33 Command received: ls /tmp
+2023/11/27 20:45:33 Command received: pwd
+2023/11/27 20:45:33 Command received: current
+2023/11/27 20:49:20 Shutting down gracefully
+2023/11/27 20:49:20 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:49:20 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:49:20 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:49:20 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:49:20 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:49:20 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:49:20 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:49:20 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:49:20 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:49:20 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:49:20 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:49:20 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:49:20 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 20:51:19 Starting the application
+2023/11/27 20:51:19 Starting implant listener on port 8008...
+2023/11/27 20:51:19 Starting remote client listener on port 8009...
+2023/11/27 20:51:26 Command received: list
+2023/11/27 20:51:26 Command received: pwd
+2023/11/27 20:51:26 Command received: current
+2023/11/27 20:51:32 Command received: select 1
+2023/11/27 20:51:32 Command received: pwd
+2023/11/27 20:51:32 Command received: current
+2023/11/27 20:51:35 Command received: whoami
+2023/11/27 20:51:35 Command received: pwd
+2023/11/27 20:51:35 Command received: current
+2023/11/27 20:51:36 Command received: who
+2023/11/27 20:51:36 Command received: pwd
+2023/11/27 20:51:36 Command received: current
+2023/11/27 20:51:43 Command received: whereis cat
+2023/11/27 20:51:43 Command received: pwd
+2023/11/27 20:51:43 Command received: current
+2023/11/27 20:51:48 Command received: cat /etc/passwd
+2023/11/27 20:51:48 Command received: pwd
+2023/11/27 20:51:48 Command received: current
+2023/11/27 20:51:50 Command received: cd ..
+2023/11/27 20:51:50 Command received: pwd
+2023/11/27 20:51:50 Command received: current
+2023/11/27 21:02:20 Command received: cd /Users/
+2023/11/27 21:02:20 Command received: pwd
+2023/11/27 21:02:20 Command received: current
+2023/11/27 21:11:47 Command received: cat /etc/passwd
+2023/11/27 21:11:47 Command received: pwd
+2023/11/27 21:11:47 Command received: current
+2023/11/27 21:11:48 Command received: cat /etc/passwd
+2023/11/27 21:11:48 Command received: pwd
+2023/11/27 21:11:48 Command received: current
+2023/11/27 21:11:49 Command received: cat /etc/passwd
+2023/11/27 21:11:49 Command received: pwd
+2023/11/27 21:11:49 Command received: current
+2023/11/27 21:11:55 Command received: cd ..
+2023/11/27 21:11:55 Command received: pwd
+2023/11/27 21:11:55 Command received: current
+2023/11/27 21:17:00 Command received: list
+2023/11/27 21:17:00 Command received: pwd
+2023/11/27 21:17:00 Command received: current
+2023/11/27 21:19:33 Shutting down gracefully
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:33 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:19:36 Starting the application
+2023/11/27 21:19:36 Starting implant listener on port 8008...
+2023/11/27 21:19:36 Starting remote client listener on port 8009...
+2023/11/27 21:19:41 Received command: zsrhg5cvn+Wyi9UE61520NsXZkIi5KKanLlkEpii1QE=
+2023/11/27 21:19:41 Decrypted command received: list
+2023/11/27 21:19:41 Received command: t2ZIVEp4L2Lsa0dcmBVo4AsPOIRS8HxaMereL5DQhB8=
+2023/11/27 21:19:41 Decrypted command received: pwd
+2023/11/27 21:19:41 Received command: WInUzDOKhVivkwqYg1Ue+oCNaNT96KR1MQkB1gTHYXDOe9EP
+2023/11/27 21:19:41 Decrypted command received: current
+2023/11/27 21:19:43 Received command: EyY61YT4rAIgXU6UIojR/dbBDpuy88MyRB6YT/Zuk00=
+2023/11/27 21:19:43 Decrypted command received: list
+2023/11/27 21:19:43 Received command: ifwBufiCLB9sseeXsurtvFuJuCKrvl06L3Pmq81rulQ=
+2023/11/27 21:19:43 Decrypted command received: pwd
+2023/11/27 21:19:43 Received command: wp4+39e/ojTbpN2HPMy42GQBT3r4oewrbfkP5Shexx4w2xY9
+2023/11/27 21:19:43 Decrypted command received: current
+2023/11/27 21:19:44 Received command: Rmfzqk1ryl6dfFfQqFuD+QM69HK98rujZ2vdcE5JHXw=
+2023/11/27 21:19:44 Decrypted command received: list
+2023/11/27 21:19:44 Received command: 2YRqgUE8w6TWU6f46GgInf1EjcTPhuFxoghrY1pM/sg=
+2023/11/27 21:19:44 Decrypted command received: pwd
+2023/11/27 21:19:44 Received command: t5HmsfoHblEQhaJvPEsYb1F33DWMp7Q31VvN6uPA4KGGhb4l
+2023/11/27 21:19:44 Decrypted command received: current
+2023/11/27 21:19:44 Received command: Yq7wq+9490r+Xa41orrhDOl6A5v+bIJqvZmQvWV2z6A=
+2023/11/27 21:19:44 Decrypted command received: list
+2023/11/27 21:19:44 Received command: AQgRT9Ct3Fiym1Tj4lJbN44Tx73W+m59o6e3sV8WAr8=
+2023/11/27 21:19:44 Decrypted command received: pwd
+2023/11/27 21:19:44 Received command: lK7J79VahvRLseu1JDmrF+VvhKZC5WobmHHrBYQmsweMt6GW
+2023/11/27 21:19:44 Decrypted command received: current
+2023/11/27 21:19:44 Received command: qyMwfpKRvJhmaAdj/WS+XMqSQsw5Hh2EIGUN+TE3j1w=
+2023/11/27 21:19:44 Decrypted command received: list
+2023/11/27 21:19:44 Received command: BZPAz3S1cOytCcUVfYWfedIa3cdsbnSoVZ32FGUFAU0=
+2023/11/27 21:19:44 Decrypted command received: pwd
+2023/11/27 21:19:44 Received command: FeKfFQoBB19KWg3RQbmfKqH4SYQ/Hx7OButYtgaCQM2uMCtL
+2023/11/27 21:19:44 Decrypted command received: current
+2023/11/27 21:19:44 Received command: CrV01k+kmC/3pPSLRdTTf5Qy0nqKz+mhhpJ/3BdRxY0=
+2023/11/27 21:19:44 Decrypted command received: list
+2023/11/27 21:19:44 Received command: qIzk6Jm3emQVhYSJKQlfQz+hLxhfMrju13mbTr+pkp4=
+2023/11/27 21:19:44 Decrypted command received: pwd
+2023/11/27 21:19:44 Received command: Bh52diDG9VEEYMaTCaqBViyZ9J+YZgT2LmQlQKRF+EqO6cbZ
+2023/11/27 21:19:44 Decrypted command received: current
+2023/11/27 21:19:45 Received command: Lcp6+rSgp6oJhuErFO5Lz/iMpDecbAobVWMk9Q+Dr8k=
+2023/11/27 21:19:45 Decrypted command received: list
+2023/11/27 21:19:45 Received command: N9OOb2q7748Yrt0194exluyxyylyx8HRMfawwk1p4CM=
+2023/11/27 21:19:45 Decrypted command received: pwd
+2023/11/27 21:19:45 Received command: IYGWKi0X//HGDDXfWyGmqBVnOgeOj9ISdeykzEsxtJPCs2yt
+2023/11/27 21:19:45 Decrypted command received: current
+2023/11/27 21:19:45 Received command: z33fVOKSluPZBqnciqX+ovcXu52l1ZS8fcNu5xoRfik=
+2023/11/27 21:19:45 Decrypted command received: list
+2023/11/27 21:19:45 Received command: vM7txQgrVXdcnoHKRGc+tJfEwrjGai21tiSEd/9H6tY=
+2023/11/27 21:19:45 Decrypted command received: pwd
+2023/11/27 21:19:45 Received command: 1Qrxl5ISEbMgddGC9bDRTxgyiOgpRZhSXu+uESgOANYR7e9X
+2023/11/27 21:19:45 Decrypted command received: current
+2023/11/27 21:20:11 Received command: 0PI1NsicGwGogRUhMKoK/Izszo22woasVwScOIqBahw=
+2023/11/27 21:20:11 Decrypted command received: list
+2023/11/27 21:20:11  - Implant ID: 1, Hostname: localhost, IP: 127.0.0.1
+2023/11/27 21:20:11 Received command: Si4ZYDYVG0SmjowiAadCx4L5yuNNBv/qGyYPAOkds3o=
+2023/11/27 21:20:11 Decrypted command received: pwd
+2023/11/27 21:20:11 Received command: P3zgvFtSinJ1VNI/zoriQFUefD5iZ0v6IcsCTmxigt746Xfl
+2023/11/27 21:20:11 Decrypted command received: current
+2023/11/27 21:20:13 Received command: nCdq2zoBqnglCyguoTPqSAhjl81pZnVJ0um9hA6cFXSQUIxc
+2023/11/27 21:20:13 Decrypted command received: select 1
+2023/11/27 21:20:13 Received command: Tl6QMw+OrSeU8iRFPY/FeDdzMULMtyEfB6cODi2kIek=
+2023/11/27 21:20:13 Decrypted command received: pwd
+2023/11/27 21:20:13 Received command: Dggx6c+iJwN9MPgvpV96EWfXe+Ph1ngBHGEsgOwX6J4KjB+7
+2023/11/27 21:20:13 Decrypted command received: current
+2023/11/27 21:20:15 Received command: 7Qy3O6GbYRXlsS81KOVsq3TqpBYZWeIPGEGRflpTPPVLqw==
+2023/11/27 21:20:15 Decrypted command received: whoami
+2023/11/27 21:20:15 Received command: CvZtgSTkev9X5Hl7+tmO+SssdUaf532K0lN5ZMRjV4E=
+2023/11/27 21:20:15 Decrypted command received: pwd
+2023/11/27 21:20:15 Received command: mHGW9NraF/qtIm289PAFrW80I8uOSti7d5b+Ni8wy3CBsdJO
+2023/11/27 21:20:15 Decrypted command received: current
+2023/11/27 21:20:17 Received command: cqcbiMaxSFBbsvxKiZCif6Q1SqNY12TebZ1C+W+O
+2023/11/27 21:20:17 Decrypted command received: ls
+2023/11/27 21:20:17 Received command: LNQbXGBJf9UBpI4keBnkwuSkI400TL3vRbNkQoN2Ptw=
+2023/11/27 21:20:17 Decrypted command received: pwd
+2023/11/27 21:20:17 Received command: af++jtUqPgCpDKygysNLGzYEHKvb2c1IKuumixFN7oDIedSW
+2023/11/27 21:20:17 Decrypted command received: current
+2023/11/27 21:20:21 Received command: y7ug8/UQo9ZGDjC9dNucMjSR1Pp/u4xdXwDgteMATaRqRv4cQQ==
+2023/11/27 21:20:21 Decrypted command received: cd /Users
+2023/11/27 21:20:21 Received command: aiLhfR12pfxcEB4Er2ca2UUPfQW1wSxLMDnk+Mh6LGw=
+2023/11/27 21:20:21 Decrypted command received: pwd
+2023/11/27 21:20:21 Received command: 1sJU/P2oKtt5nHuK5/nWaWVHVuv393YkdvFyHaXs+iwoArlV
+2023/11/27 21:20:21 Decrypted command received: current
+2023/11/27 21:20:22 Received command: dGZTnn8Hss8HrPYZcnl7Ag0I+bzjwtH8L2ZWqxQ8
+2023/11/27 21:20:22 Decrypted command received: ls
+2023/11/27 21:20:22 Received command: gTzor8umi2XgqJ9KKl7jTjNNsnjPzQNK7QfNVX1jZ4A=
+2023/11/27 21:20:22 Decrypted command received: pwd
+2023/11/27 21:20:22 Received command: wNbjuNbFoAMkoaWTZQjSxMBNR1ehYTIHlHKXdNC8ii+ha2jQ
+2023/11/27 21:20:22 Decrypted command received: current
+2023/11/27 21:20:26 Received command: d8Agng4s2JALG2Wh+Lm1JY5aSEdXHLdF9qwngh0jewk99P7WyxFei7SDCg==
+2023/11/27 21:20:26 Decrypted command received: cat /etc/passwd
+2023/11/27 21:20:26 Received command: 7AxRL5HTFTwl9XsDQR9Kqv8+yj+S9tbN3K4WmxBOEk4=
+2023/11/27 21:20:26 Decrypted command received: pwd
+2023/11/27 21:20:26 Received command: AGM1vZjkZmBNU6vuMF/x0CD4R7rGaaIf0S7COTU0MpvIetR5
+2023/11/27 21:20:26 Decrypted command received: current
+2023/11/27 21:21:23 Shutting down gracefully
+2023/11/27 21:21:23 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:21:23 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:21:23 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:21:23 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:21:23 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:21:23 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:21:23 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:21:23 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:21:23 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:21:25 Starting the application
+2023/11/27 21:21:25 Starting implant listener on port 8008...
+2023/11/27 21:21:25 Starting remote client listener on port 8009...
+2023/11/27 21:21:33 Received command: 58rBQd+H8yfUTcYdlwkd35Ljfz6y9Fq9hu2wU4eS5u4=
+2023/11/27 21:21:33 Decrypted command received: list
+2023/11/27 21:21:33 Received command: f6SWp/e6iJGMkQ/2oL1mpTCdBr4IuUWaIoxa1TrY62U=
+2023/11/27 21:21:33 Decrypted command received: pwd
+2023/11/27 21:21:33 Received command: /funDDsTbfJg3nyD/+Vs9nak7VwSmyv4FCE9Bp3ev+W5IFGU
+2023/11/27 21:21:33 Decrypted command received: current
+2023/11/27 21:21:33 New implant connected: 1, Hostname: localhost, IP: 127.0.0.1
+2023/11/27 21:21:35 Received command: NQMUf1o34VcgKL9+6Wb+7UFOeyCtVtbU/vGUCwJeEt8=
+2023/11/27 21:21:35 Decrypted command received: list
+2023/11/27 21:21:35  - Implant ID: 1, Hostname: localhost, IP: 127.0.0.1
+2023/11/27 21:21:35 Received command: zFOpVhqeWHHtMLC6EP4FcRrCWIKbeoETig9bbsdrVMU=
+2023/11/27 21:21:35 Decrypted command received: pwd
+2023/11/27 21:21:35 Received command: pEsC/ngnsms2z1604XavLu6vQVscEiR/atqGQql1podxA15M
+2023/11/27 21:21:35 Decrypted command received: current
+2023/11/27 21:21:37 Received command: 7ZVBsXKciNLHtzYl651i9nWwzOYWLyesJRfuOzwYXgXGIV18
+2023/11/27 21:21:37 Decrypted command received: select 1
+2023/11/27 21:21:37 Received command: g6TXQxAdAEmqnj3ZokQELxzWIjEBwDZNIaJaJLLl874=
+2023/11/27 21:21:37 Decrypted command received: pwd
+2023/11/27 21:21:37 Received command: +T1ldCbA84D7dLXW2Jo1naTxKSlYd7mSTmogYSqeZCZKgJRz
+2023/11/27 21:21:37 Decrypted command received: current
+2023/11/27 21:21:38 Received command: KvsXsQEwAxhwIby6hj/PZGkBYSlQpK/jrjKNe/ParQ==
+2023/11/27 21:21:38 Decrypted command received: pwd
+2023/11/27 21:21:38 Received command: olQ8gRRSbXjRkbV/s+xZjfqyMXRzLRno1E33Jh1YUBM=
+2023/11/27 21:21:38 Decrypted command received: pwd
+2023/11/27 21:21:38 Received command: upSQWG8bP2l5Ae4nmcqHE/QgrOCyn9xC5kH7sC3/xqCcUUad
+2023/11/27 21:21:38 Decrypted command received: current
+2023/11/27 21:21:40 Received command: GxRW4xdvjKZrmG+ol6BKNQldlMaYfzYP5pkbp+WzJ/XE
+2023/11/27 21:21:40 Decrypted command received: cd ..
+2023/11/27 21:21:40 Received command: hty0ZAjrAwewo0c6LmgvmWx+di8tXiL85WretDSyXtc=
+2023/11/27 21:21:40 Decrypted command received: pwd
+2023/11/27 21:21:40 Received command: NCqmq3mH5uA6KNwFp0/aEWZDVOqA7rc/wDexIUBif9oW7LFF
+2023/11/27 21:21:40 Decrypted command received: current
+2023/11/27 21:21:42 Received command: I5z/nmOqYAaE6JXuZzS+1Gcgl277lvipUUbKNKdZ/ep+NM8hTQ==
+2023/11/27 21:21:42 Decrypted command received: cd /Users
+2023/11/27 21:21:42 Received command: FduDSLiqKjnkg6mvt/da7ZNgXgNJPTCv4KYDWvccbjw=
+2023/11/27 21:21:42 Decrypted command received: pwd
+2023/11/27 21:21:42 Received command: hzBYpaFJk/V8qmddFEtbNsQN0NuPQew/yojMse+S7ZARGorS
+2023/11/27 21:21:42 Decrypted command received: current
+2023/11/27 21:21:44 Received command: R/YNpEkCBx/6BXjzFFKSFS9cF5g5O/KDizQpalxrud9w2K9yHv//UgeUOA==
+2023/11/27 21:21:44 Decrypted command received: cat /etc/passwd
+2023/11/27 21:21:44 Received command: UhSTuzrqmBSVJyRRxasK9BYENntEYFdem/x3qCpIxbI=
+2023/11/27 21:21:44 Decrypted command received: pwd
+2023/11/27 21:21:44 Received command: spGNIOzpOUZnCbv/m1gi33pU5JxyssQZl4rvXziVUe5GkrcT
+2023/11/27 21:21:44 Decrypted command received: current
+2023/11/27 21:21:46 Received command: lLFLWkocV0GuFL+G4AFg+6pAJp2/CWuo/C0K1G6LLwt6s5d/
+2023/11/27 21:21:46 Decrypted command received: select 2
+2023/11/27 21:21:46 Received command: BLT/YCSZGxDX9oFfjFQ8Gba2sT9fbREaMol7kDaV/8E=
+2023/11/27 21:21:46 Decrypted command received: pwd
+2023/11/27 21:21:46 Received command: AtMmYRAZqluQ/nJwGC7fG5UQn1Xzhg7NaEUTXDlmzUVeiPGa
+2023/11/27 21:21:46 Decrypted command received: current
+2023/11/27 21:22:31 Shutting down gracefully
+2023/11/27 21:22:31 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:22:31 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:22:31 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:22:31 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:22:31 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:22:31 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:22:31 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:22:31 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:23:07 Starting the application
+2023/11/27 21:23:07 Starting implant listener on port 8008...
+2023/11/27 21:23:07 Starting remote client listener on port 8009...
+2023/11/27 21:23:32 New implant connected: 1, Hostname: localhost, IP: 127.0.0.1
+2023/11/27 21:23:47 Shutting down gracefully
+2023/11/27 21:23:47 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:23:47 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:23:47 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:23:47 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:23:47 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:23:47 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:23:47 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:23:47 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:23:47 Error accepting connection on second port: accept tcp [::]:8009: use of closed network connection
+2023/11/27 21:23:48 Starting the application
+2023/11/27 21:23:48 Starting implant listener on port 8008...
+2023/11/27 21:23:48 Starting remote client listener on port 8009...
+2023/11/27 21:23:58 Received command: HzuPb4NhRscyWO642sHvngBPsDLawgFzrSahZ8zo6as=
+2023/11/27 21:23:58 Decrypted command received: list
+2023/11/27 21:23:58 No implants connected.
+2023/11/27 21:23:58 Received command: HGR64xpQZNySrwtv1Q0DmtkLqPIwrd+w3AUQVgA/8KA=
+2023/11/27 21:23:58 Decrypted command received: pwd
+2023/11/27 21:23:58 Received command: /NkQwu14x6BVSflwITMf1d8ipYf5g1Bh1o6sE5S6jNSbXdp7
+2023/11/27 21:23:58 Decrypted command received: current
+2023/11/27 21:23:58 New implant connected: 1, Hostname: localhost, IP: 127.0.0.1
+2023/11/27 21:23:59 Received command: vih+UucRthcIWKtrnwQA9E9yL/ibTMGFb4PFoe16YKg=
+2023/11/27 21:23:59 Decrypted command received: list
+2023/11/27 21:23:59 Connected implants:
+2023/11/27 21:23:59  - Implant ID: 1, Hostname: localhost, IP: 127.0.0.1
+2023/11/27 21:23:59  - Implant ID: 1, Hostname: localhost, IP: 127.0.0.1
+2023/11/27 21:23:59 Received command: 4/eWF8thZadck0fC0bqb+YlLl3gy09xNJvkoXMwD6BI=
+2023/11/27 21:23:59 Decrypted command received: pwd
+2023/11/27 21:23:59 Received command: durAtk64DRcrqJ9dyK9vE9MaXmc4DiIX0pteIR15RS26O64O
+2023/11/27 21:23:59 Decrypted command received: current
+2023/11/27 21:23:59 Received command: vuCjLZvyEGAm9PQ/AoHOzQ3uuPR8yg6Pfdvefig3dTk=
+2023/11/27 21:23:59 Decrypted command received: list
+2023/11/27 21:23:59 Connected implants:
+2023/11/27 21:23:59  - Implant ID: 1, Hostname: localhost, IP: 127.0.0.1
+2023/11/27 21:23:59  - Implant ID: 1, Hostname: localhost, IP: 127.0.0.1
+2023/11/27 21:23:59 Received command: sMnTO9izHOKsS6AW9DYA87o80FYDFL3nronCqqL/hpI=
+2023/11/27 21:23:59 Decrypted command received: pwd
+2023/11/27 21:23:59 Received command: oUO9uBBzHR7Mo/qFcKJgOipzVXovQ+DTAFfrisJn1gnDeHEp
+2023/11/27 21:23:59 Decrypted command received: current
+2023/11/27 21:24:02 Received command: W7ZlHw4CT7f15e/Uo12YASeqYuOfzqbVeQuoeH0BcM8lCq6U
+2023/11/27 21:24:02 Decrypted command received: select 1
+2023/11/27 21:24:02 Selected implant 1
+2023/11/27 21:24:02 Received command: qytnIxuZ9HpXw2Q+x04OLTQFojoMsS9EdVMrHl/jW1w=
+2023/11/27 21:24:02 Decrypted command received: pwd
+2023/11/27 21:24:02 Received command: I8Y7J/ksAWZhy4D5XUPLVlxa52czi2uj5Oyjy5m8bwTyNEkQ
+2023/11/27 21:24:02 Decrypted command received: current
+2023/11/27 21:24:04 Received command: hwCmYi0qfiXFZvH8I5KITICP94ee1hwYnERaX2gFklRNvg==
+2023/11/27 21:24:04 Decrypted command received: whoami
+2023/11/27 21:24:04 Received command: vRRTIYOgVuFtW+POIBeLulsAvSZB69vI+zPuAcKq/Ws=
+2023/11/27 21:24:04 Decrypted command received: pwd
+2023/11/27 21:24:04 Received command: EIDbmeopAG4pfKEYMLtfV1FajHHPgKGxCr08EY3yHf4m1EMG
+2023/11/27 21:24:04 Decrypted command received: current
+2023/11/27 21:24:06 Received command: sKwNXrVorTxXU8LlfPTqtlgdJshV+x/gNd1beueZ0AMWiferwKNNDPKqCw==
+2023/11/27 21:24:06 Decrypted command received: cat /etc/passwd
+2023/11/27 21:24:06 Received command: vheFhCvvGbGz5qjFIsFwbW4Git1pRgv/y/Cn2IH9ON4=
+2023/11/27 21:24:06 Decrypted command received: pwd
+2023/11/27 21:24:06 Received command: DBk+ZTty4Ou+KrXz2rbRK31NZ6GcW/PrYYb4Q2lLTAScAix/
+2023/11/27 21:24:06 Decrypted command received: current

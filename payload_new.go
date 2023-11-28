@@ -21,7 +21,7 @@ import (
 
 const (
 	PSKPayload = "thisiscoolthisiscool1234" // 16/24 char PSK // shared psk with client/server/implants
-	target     = "127.0.0.1"                // C2 Server
+	target     = "0.0.0.0"                  // C2 Server
 	port       = "8008"
 )
 

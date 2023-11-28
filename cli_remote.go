@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"encoding/base64"
+	"flag"
 	"fmt"
 	"net"
 	"strings"
@@ -11,6 +12,16 @@ import (
 	"github.com/chzyer/readline"
 	encryption "github.com/grines/minic2/common"
 )
+
+var (
+	serverIP   string
+	serverPort string
+)
+
+func init() {
+	flag.StringVar(&serverIP, "ip", "0.0.0.0", "IP address of the server")
+	flag.StringVar(&serverPort, "port", "8009", "Port of the server")
+}
 
 const (
 	serverAddress = "0.0.0.0:8009"
@@ -84,6 +95,10 @@ func (c *Client) SendCommand(command string) (string, error) {
 }
 
 func main() {
+	flag.Parse()
+
+	serverAddress := serverIP + ":" + serverPort
+
 	client, err := NewClient(serverAddress)
 	if err != nil {
 		fmt.Println("Error connecting to server:", err)
