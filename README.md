@@ -1,10 +1,12 @@
 # TCPMacDuoC2
 
-TCPMacDuoC2 is a command-and-control (C2) server specifically designed for Mac systems, featuring a dual-port TCP communication mechanism. This tool allows for efficient and secure management of remote systems through encrypted commands and responses.
+TCPMacDuoC2 is a command-and-control (C2) server specifically designed for Mac systems, featuring a dual-port TCP communication mechanism. This tool allows for efficient and secure management of remote systems through encrypted commands and responses. The goal of this project is to have a lightweight fast C2 for rapid payload developement and deployment. This code can be ran as is with little configuration.
 
 ## Features
 
 - Dual-port TCP server for enhanced communication.
+- Handles mutiple implants
+- Multi User
 - Encrypted command transmission for security.
 - Reconnection handling for maintaining persistent control.
 - Command-line interface for easy interaction.
@@ -43,7 +45,7 @@ To use TCPMacDuoC2, you need to start both the server and the client.
    ```
    ./cli_remote -ip <server_ip> -port <server_port>
    ```
-3. Run the payload on a target machine
+3. Run the payload on a target machine. Ensure to update the target address to point to the multi_serv
    ```
    ./payload
    ```
@@ -92,5 +94,5 @@ Contributions to TCPMacDuoC2 are welcome. Please feel free to submit pull reques
 
 ---
 
-For more information, please refer to the [documentation](#) or [issues](https://github.com/yourusername/TCPMacDuoC2/issues) section.
+For more information, please refer to the [documentation](#) or [issues](https://github.com/grines/TCPMacDuoC2/issues) section.
 
