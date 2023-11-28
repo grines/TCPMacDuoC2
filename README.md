@@ -4,9 +4,9 @@ TCPMacDuoC2 is a command-and-control (C2) server specifically designed for Mac s
 
 ## Features
 
-- Dual-port TCP server for enhanced communication.
-- Handles mutiple implants
-- Multi User
+- Dual-port TCP server for real time terminal access via client and server.
+- Can handle mutiple implants.
+- Multiuser capabilities
 - Encrypted command transmission for security.
 - Reconnection handling for maintaining persistent control.
 - Command-line interface for easy interaction.
