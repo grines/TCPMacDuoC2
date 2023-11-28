@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	serverAddress = "127.0.0.1:8009"
+	serverAddress = "0.0.0.0:8009"
 	PSK           = "thisiscoolthisiscool1234"
 )
 

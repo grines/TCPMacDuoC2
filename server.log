@@ -1,0 +1,16 @@
+2023/11/27 19:34:58 Starting implant listener...
+2023/11/27 19:34:58 Starting remote client listener...
+2023/11/27 19:35:51 Command received: list
+2023/11/27 19:35:51 No implants connected.
+2023/11/27 19:35:51 Command received: pwd
+2023/11/27 19:35:51 Command received: current
+2023/11/27 19:36:14 New implant connected: 1, Hostname: localhost, IP: 127.0.0.1
+2023/11/27 19:36:20 Command received: list
+2023/11/27 19:36:20 Connected implants:
+2023/11/27 19:36:20  - Implant ID: 1, Hostname: localhost, IP: 127.0.0.1
+2023/11/27 19:36:20 Command received: pwd
+2023/11/27 19:36:20 Command received: current
+2023/11/27 19:36:24 Command received: select 1
+2023/11/27 19:36:24 Selected implant 1
+2023/11/27 19:36:24 Command received: pwd
+2023/11/27 19:36:58 Error reading from connection: read tcp 127.0.0.1:8009->127.0.0.1:50210: read: connection reset by peer

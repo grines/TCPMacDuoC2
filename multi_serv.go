@@ -314,15 +314,6 @@ func handleSelectCommand(command string) {
 }
 
 func handleClientCommand2(client *Client, command string) string {
-	//Encrypt it
-	//decryptCommand, err := encryption.Decrypt(command, PSK)
-	//if err != nil {
-	//	fmt.Println("Error encrypting command:", err)
-	//}
-
-	//fmt.Println("sending command to server")
-	//fmt.Println(decryptCommand)
-
 	// Send the command to the server
 	_, err := client.conn.Write([]byte(command + "\n"))
 	if err != nil {
