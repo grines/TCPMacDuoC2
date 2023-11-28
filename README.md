@@ -55,9 +55,28 @@ Replace `<server_ip>` and `<server_port>` with the appropriate values.
 - `list`: Lists all connected implants.
 - `select <implant_id>`: Selects an implant to interact with.
 - `current`: Shows the currently selected implant.
-- `keychain`: Access an OSX keychain service name
-- `clipboard`: Access the OSX clipboard data.
-- `osascript`: Run osascript on the victims machine
+- `osascript`: Executes an AppleScript command.
+- `osascript_url`: Executes an AppleScript command from a provided URL.
+- `env`: Retrieves the environment variables of the system.
+- `ping`: Responds with "pong" to check if the implant is alive.
+- `whoami`: Returns the current user name.
+- `ps`: Lists all running processes.
+- `clipboard`: Retrieves the current content of the clipboard.
+- `screenshot`: Takes a screenshot of the current screen.
+- `cd`: Changes the current working directory.
+- `download`: Downloads a specified file from the target system.
+- `upload`: Uploads a file to the target system.
+- `pwd`: Shows the current working directory.
+- `keychain`: Retrieves passwords stored in the keychain for a specified service.
+- `portscan`: Scans for open ports on the target system.
+- `cp`: Copies a file from one location to another.
+- `mv`: Moves a file from one location to another.
+- `curl`: Fetches the content from a URL.
+- `kill`: Terminates a process by its PID.
+- `cat`: Displays the content of a file.
+- `rm`: Removes a specified file.
+- `ls`: Lists files in a specified directory or the current directory if none is specified.
+- `default`: If the command is not recognized, it is executed in the shell.
 
 ## Disclaimer
 
