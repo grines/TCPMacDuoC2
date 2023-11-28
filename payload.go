@@ -14,9 +14,9 @@ import (
 	"strings"
 	"time"
 
-	encryption "github.com/grines/minic2/common"
-	"github.com/grines/minic2/osx"
-	syscall "github.com/grines/minic2/payload_func"
+	encryption "github.com/grines/TCPMacDuoC2/common"
+	"github.com/grines/TCPMacDuoC2/osx"
+	syscall "github.com/grines/TCPMacDuoC2/payload_func"
 )
 
 // 16/24 char PSK

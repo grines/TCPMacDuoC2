@@ -1,4 +1,4 @@
-module github.com/grines/minic2
+module github.com/grines/TCPMacDuoC2
 
 go 1.20
 

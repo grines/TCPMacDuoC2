@@ -10,7 +10,7 @@ import (
 	"time"
 
 	"github.com/chzyer/readline"
-	encryption "github.com/grines/minic2/common"
+	encryption "github.com/grines/TCPMacDuoC2/common"
 )
 
 var (
