@@ -131,27 +131,30 @@ func main() {
 			continue
 		}
 
-		updatePromp(rl, client)
+		promptUpdate(rl, client)
 		fmt.Println(response)
 	}
 }
 
-func updatePromp(rl *readline.Instance, client *Client) {
+func promptUpdate(rl *readline.Instance, client *Client) {
 	if rl == nil {
 		return // Safeguard against nil readline instance
 	}
 
 	currentClientDir, err := client.SendCommand("pwd\n")
+	if err != nil {
+		rl.SetPrompt("Implant > ")
+		return
+	}
+
 	currentClient, err := client.SendCommand("current\n")
-	if currentClient == "-1" {
+	if err != nil || currentClient == "-1" {
 		currentClient = "None"
 	}
+
 	if currentClientDir == "No implant selected" {
 		currentClientDir = ""
 	}
-	if err != nil {
-		rl.SetPrompt("Implant > ")
-	} else {
-		rl.SetPrompt(fmt.Sprintf("Implant %s - %s> ", currentClient, currentClientDir))
-	}
+
+	rl.SetPrompt(fmt.Sprintf("Implant %s - %s> ", currentClient, currentClientDir))
 }
