@@ -213,6 +213,7 @@ func handleNewConnectionRemote(conn net.Conn) {
 			resp := handleImplantCommand(currentClient, command)
 			fmt.Println(resp)
 			saveFile(command, resp)
+			continue
 		}
 		if currentClient == nil {
 			sendResponseRemote(conn, "No implant selected")
