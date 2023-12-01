@@ -123,6 +123,8 @@ func main() {
 		"kill",
 		"ls",
 		"mv",
+		"persist_launchd com.github.facebooks.watchman.plist /usr/bin/whoami",
+		"persist_loginitem certproxy /usr/bin/whoami",
 		"pillage",
 		"ping",
 		"portscan",
